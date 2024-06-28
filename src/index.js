@@ -10,7 +10,6 @@ const port = 3000;
 
 import "./db.js";
 
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

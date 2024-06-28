@@ -22,7 +22,7 @@ create.post('/layout/data', async (req, res) => {
 
     console.log(userTemp);
 
-    res.redirect('/layout');
+    res.redirect('/');
 
 });
 
