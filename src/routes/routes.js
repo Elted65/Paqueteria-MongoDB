@@ -3,9 +3,9 @@ import User from "../schemas/collectionSchema.js"
 
 const route = Router();
 
-route.get('/', (req, res) => {
+route.get('/', async (req, res) => {
 
-    const users = User.find();
+    const users = await User.find();
 
     res.render('home', { users })
 });
