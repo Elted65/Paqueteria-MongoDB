@@ -27,7 +27,7 @@ crud.post('/layout/data', async (req, res) => {
 
 });
 
-crud.put('/layout/data/update', async (req, res) => {
+crud.post('/layout/data/update', async (req, res) => {
 
     let { name, phone, email, password, address, id } = req.body;
 
