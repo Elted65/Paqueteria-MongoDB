@@ -32,29 +32,32 @@ crud.put('/layout/data/update', async (req, res) => {
     let { name, phone, email, password, address, id } = req.body;
 
     let query = { _id: id };
-
     
-    if(name != '') User.findOneAndUpdate(query, { $set: { name: name } });
+    if(name != '') await User.findOneAndUpdate(query, { $set: { name: name } });
 
-    if(phone != '') User.findOneAndUpdate(query, { $set: { phone: phone } });
+    if(phone != '') await User.findOneAndUpdate(query, { $set: { phone: phone } });
 
-    if(email != '') User.findOneAndUpdate(query, { $set: { email: email } });
+    if(email != '') await User.findOneAndUpdate(query, { $set: { email: email } });
 
-    if(password != '') User.findOneAndUpdate(query, { $set: { password: password } });
+    if(password != '') await User.findOneAndUpdate(query, { $set: { password: password } });
 
-    if(address != '') User.findOneAndUpdate(query, { $set: { address: address } });
+    if(address != '') await User.findOneAndUpdate(query, { $set: { address: address } });
 
     res.redirect('/update');
 
 });
 
-crud.delete('/layout/data/delete', async (req, res) => {
+crud.post('/layout/data/delete', async (req, res) => {
+
+    let id = req.body.id;
+
+    console.log(id);
 
     let query = { _id: id };
 
-    User.deleteOne(query)
+    await User.deleteOne(query)
 
-    res.redirect('/update');
+    res.redirect('/');
 
 });
 
