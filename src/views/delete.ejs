@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <%- include("partials/head")%>
+
+</head>
+
+<body>
+    <%- include("partials/navbar")%>
+
+        <div class="p-5">
+            <form action="/layout/data/delete" method="delete" enctype="application/x-www-form-urlencoded">
+                <div class="p-5">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id" name="id">
+                </div>
+
+                <div class="px-5">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+</body>
+
+</html>

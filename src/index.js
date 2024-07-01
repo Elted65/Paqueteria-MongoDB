@@ -3,7 +3,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import route from "./routes/routes.js";
-import create from "./routes/create.js";
+import crud from "./routes/crud.js";
 
 const app = express();
 const port = 3000;
@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(morgan('dev'));
 
 app.use(route);
-app.use(create);
+app.use(crud);
 
 app.listen(port, (req, res) => {
     console.log('LISTEN ON PORT', port);
